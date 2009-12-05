@@ -18,7 +18,7 @@ end
 // This is called after a player wins in a free for all
 function GM:OnRoundWinner( ply, resulttext )
  
-	ply:AddScore( 1 ) // Let's pretend we have AddScore for brevity's sake
+	//ply:AddScore( 1 ) // Let's pretend we have AddScore for brevity's sake
  
 end
  
