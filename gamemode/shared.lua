@@ -58,12 +58,17 @@ TEAM_MUNCHERS = 1
 TEAM_RUNNER = 2
 
 function GM:CreateTeams()
-{
-	team.SetUp(TEAM_MUNCHERS, "Munchers", Color(230, 40, 40), false);
+
+	if ( !GAMEMODE.TeamBased ) then return end
+
+	team.SetUp(TEAM_MUNCHERS, "Munchers", Color(230, 40, 40), true);
 	team.SetSpawnPoint( TEAM_MUNCHERS, { "info_player_rebel" } )
 	team.SetClass( TEAM_MUNCHERS, { "Muncher" } )
 	
-	team.SetUp(TEAM_RUNNER, "Runner", Color( 40, 40, 230), false)
+	team.SetUp(TEAM_RUNNER, "Runner", Color( 40, 40, 230), true)
 	team.SetSpawnPoint(TEAM_RUNNER, { "info_player_combine" } )
 	team.SetClass( TEAM_RUNNER, { "Runner" } )
-}
+	
+	team.SetUp(TEAM_SPECTATOR, "Spectators", Color(128,128,128), true)
+	team.SetSpawnPoint(TEAM_SPECTATOR, {"info_player_rebel", "info_player_combine"} )
+end

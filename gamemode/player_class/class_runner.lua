@@ -1,13 +1,13 @@
 local CLASS = {}
 
-CLASS.DisplayName			= "Muncher"
+CLASS.DisplayName			= "Runner"
 CLASS.WalkSpeed 			= 400
 CLASS.CrouchedWalkSpeed 	= 0.2
 CLASS.RunSpeed				= 400
 CLASS.DuckSpeed				= 0.2
 CLASS.JumpPower				= 200
-CLASS.PlayerModel			= "models/player/Kleiner.mdl"
-CLASS.DrawTeamRing			= true
+CLASS.PlayerModel			= "models/player/breen.mdl"
+CLASS.DrawTeamRing			= false
 CLASS.DrawViewModel			= false
 CLASS.CanUseFlashlight      = false
 CLASS.MaxHealth				= 100
@@ -27,12 +27,16 @@ function CLASS:Loadout( pl )
 end
  
 function CLASS:OnSpawn( pl )
-	if (IsValid(ply.Trail)) then
-		ply.Trail:Remove()
-	end
+	pl.Trail = util.SpriteTrail(ply, 0, Color(255,0,0), false, 15, 1, 4, 1/(15+1)*0.5, "trails/plasma.vmt")
+	pl.Spotlight = ents.Create("point_spotlight");
+	pl.Spotlight:SetPos(pl:GetPos() + Vector(0, 0, 32));
+	pl.Spotlight:SetParent(pl)
 end
  
 function CLASS:OnDeath( pl, attacker, dmginfo )
+	if (IsValid(pl.Spotlight)) then
+		pl.Spotlight:Remove()
+	end
 end
  
 function CLASS:Think( pl )
@@ -50,14 +54,8 @@ end
 function CLASS:ShouldDrawLocalPlayer( pl )
 	return false
 end
-
-
+ 
 function CLASS:CalcView( ply, origin, angles, fov )
-	local View = {}
-	View.origin = Origin
-	View.angles = Angles
-	View.fov = 110 
-	return View
 end
  
-player_class.Register( "Muncher", CLASS )
+player_class.Register( "Runner", CLASS )
