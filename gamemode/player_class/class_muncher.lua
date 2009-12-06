@@ -28,7 +28,11 @@ end
  
 function CLASS:OnSpawn( pl )
 	if (IsValid(pl.Trail)) then
-		plW.Trail:Remove()
+		pl.Trail:Remove()
+	end
+	
+	if (IsValid(pl.Spotlight)) then
+		pl.Spotlight:Remove()
 	end
 end
  

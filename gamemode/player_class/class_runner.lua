@@ -33,7 +33,7 @@ function CLASS:OnSpawn( pl )
 	pl.Spotlight:SetPos(pl:GetPos() + Vector(0, 0, 80));
 	pl.Spotlight:SetAngles(Angle(90, 0, 0))
 	pl.Spotlight:SetParent(pl)
-	pl.Spotlight:SetKeyValue("spotlightlength", 512);
+	pl.Spotlight:SetKeyValue("spotlightlength", 256);
 	pl.Spotlight:SetKeyValue("spotlightwidth", 64);
 	pl.Spotlight:SetKeyValue("rendercolor", "255 0 0");
 	pl.Spotlight:Fire("LightOn", "", 0);
@@ -42,6 +42,7 @@ end
  
 function CLASS:OnDeath( pl, attacker, dmginfo )
 	if (IsValid(pl.Spotlight)) then
+		pl.Spotlight:Fire("LightOff", "", 0);
 		pl.Spotlight:Remove()
 	end
 end

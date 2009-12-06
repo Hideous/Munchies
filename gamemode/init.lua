@@ -26,23 +26,21 @@ end*/
  function GM:Think()
 	
 	framecounter = framecounter + 1
-	if (framecounter == 5) then
-		local runner = table.Random(team.GetPlayers(TEAM_RUNNER))
+	if (framecounter == 5 && team.NumPlayers(TEAM_RUNNER) > 0) then
+		local runner = team.GetPlayers(TEAM_RUNNER)[1]
 	 
 		for k, v in pairs(team.GetPlayers( TEAM_MUNCHERS)) do
-			if (v:GetPos():Distance(runner:GetPos()) < 32) then
+			if (v:GetPos():Distance(runner:GetPos()) < 90 && runner:Alive() && v:Alive()) then
 				v:SetTeam(TEAM_RUNNER)
 				runner:SetTeam(TEAM_MUNCHERS)
 				v:SetRandomClass()
 				runner:SetRandomClass()
 				v:KillSilent()
 				
-				local dmginfo = DamageInfo()
-				dmginfo:SetDamage(100)
-				dmginfo:SetDamageType(DMG_GENERIC)
-				dmginfo:SetAttacker(v)
-				dmginfo:SetDamageForce(Vector(0, 0, 1000))
-				runner:TakeDamageInfo(dmginfo)
+				runner:Kill()
+				for l, b in pairs(player.GetAll()) do
+					b:ChatPrint( v:Nick() .. " is now the runner!" )
+				end
 				
 				break
 			end

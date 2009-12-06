@@ -18,7 +18,7 @@ GM.RoundLimit = 10					// Maximum amount of rounds to be played in round based g
 GM.VotingDelay = 5					// Delay between end of game, and vote. if you want to display any extra screens before the vote pops up
  
 GM.NoPlayerSuicide = true
-GM.NoPlayerDamage = true
+GM.NoPlayerDamage = false
 GM.NoPlayerSelfDamage = true		// Allow players to hurt themselves?
 GM.NoPlayerTeamDamage = true		// Allow team-members to hurt each other?
 GM.NoPlayerPlayerDamage = true 	// Allow players to hurt each other?
