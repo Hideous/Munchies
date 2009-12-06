@@ -52,10 +52,10 @@ GM.HudSkin = "SimpleSkin"
  
 GM.ValidSpectatorModes = { OBS_MODE_CHASE }
 GM.ValidSpectatorEntities = { "player" }	// Entities we can spectate
-GM.CanOnlySpectateOwnTeam = false // you can only spectate players on your own team
+GM.CanOnlySpectateOwnTeam = false // you can only spectate players on your own team*/
 
-TEAM_MUNCHERS = 1
-TEAM_RUNNER = 2
+TEAM_MUNCHERS = 3
+TEAM_RUNNER = 4
 
 function GM:CreateTeams()
 

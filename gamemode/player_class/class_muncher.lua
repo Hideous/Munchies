@@ -27,8 +27,8 @@ function CLASS:Loadout( pl )
 end
  
 function CLASS:OnSpawn( pl )
-	if (IsValid(ply.Trail)) then
-		ply.Trail:Remove()
+	if (IsValid(pl.Trail)) then
+		plW.Trail:Remove()
 	end
 end
  

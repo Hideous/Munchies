@@ -27,10 +27,17 @@ function CLASS:Loadout( pl )
 end
  
 function CLASS:OnSpawn( pl )
-	pl.Trail = util.SpriteTrail(ply, 0, Color(255,0,0), false, 15, 1, 4, 1/(15+1)*0.5, "trails/plasma.vmt")
+	pl.Trail = util.SpriteTrail(pl, 0, Color(255,0,0), false, 15, 1, 4, 1/(15+1)*0.5, "trails/plasma.vmt")
+	
 	pl.Spotlight = ents.Create("point_spotlight");
-	pl.Spotlight:SetPos(pl:GetPos() + Vector(0, 0, 32));
+	pl.Spotlight:SetPos(pl:GetPos() + Vector(0, 0, 256));
+	pl.Spotlight:SetAngles(Angle(-90, 0, 0))
 	pl.Spotlight:SetParent(pl)
+	pl.Spotlight:SetKeyValue("spotlightlength", 512);
+	pl.Spotlight:SetKeyValue("spotlightwidth", 64);
+	pl.Spotlight:SetKeyValue("rendercolor", "255 0 0");
+	pl.Spotlight:Fire("LightOn", "", 0);
+	pl.Spotlight:Activate()
 end
  
 function CLASS:OnDeath( pl, attacker, dmginfo )
