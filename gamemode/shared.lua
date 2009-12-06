@@ -65,7 +65,7 @@ function GM:CreateTeams()
 	team.SetSpawnPoint( TEAM_MUNCHERS, { "info_player_rebel" } )
 	team.SetClass( TEAM_MUNCHERS, { "Muncher" } )
 	
-	team.SetUp(TEAM_RUNNER, "Runner", Color( 40, 40, 230), true)
+	team.SetUp(TEAM_RUNNER, "Runner", Color( 40, 40, 230), false)
 	team.SetSpawnPoint(TEAM_RUNNER, { "info_player_combine" } )
 	team.SetClass( TEAM_RUNNER, { "Runner" } )
 	

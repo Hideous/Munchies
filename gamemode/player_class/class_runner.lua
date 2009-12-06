@@ -30,8 +30,8 @@ function CLASS:OnSpawn( pl )
 	pl.Trail = util.SpriteTrail(pl, 0, Color(255,0,0), false, 15, 1, 4, 1/(15+1)*0.5, "trails/plasma.vmt")
 	
 	pl.Spotlight = ents.Create("point_spotlight");
-	pl.Spotlight:SetPos(pl:GetPos() + Vector(0, 0, 256));
-	pl.Spotlight:SetAngles(Angle(-90, 0, 0))
+	pl.Spotlight:SetPos(pl:GetPos() + Vector(0, 0, 80));
+	pl.Spotlight:SetAngles(Angle(90, 0, 0))
 	pl.Spotlight:SetParent(pl)
 	pl.Spotlight:SetKeyValue("spotlightlength", 512);
 	pl.Spotlight:SetKeyValue("spotlightwidth", 64);
