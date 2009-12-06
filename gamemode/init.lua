@@ -5,6 +5,7 @@ AddCSLuaFile('cl_hud')
 include('shared.lua')
 
 // This is called every second to see if we can end the round
+// Hey I can make comments. Yours truly, Don Andy
 /*function GM:CheckRoundEnd()
  
 	if ( !GAMEMODE:InRound() ) then return end 
