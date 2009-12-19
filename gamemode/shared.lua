@@ -54,8 +54,8 @@ GM.ValidSpectatorModes = { OBS_MODE_CHASE }
 GM.ValidSpectatorEntities = { "player" }	// Entities we can spectate
 GM.CanOnlySpectateOwnTeam = false // you can only spectate players on your own team*/
 
-TEAM_MUNCHERS = 3
-TEAM_RUNNER = 4
+TEAM_MUNCHERS = 1
+TEAM_RUNNER = 2
 
 function GM:CreateTeams()
 
