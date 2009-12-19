@@ -8,6 +8,11 @@
 	"author_url"	""
 	
 	"icon"		""
-	"info"		""
+	"info"		"Eat the pills and run away. Pills here!"
 	"hide"		"0"
+	
+	"mappattern"
+	{
+		"1"		"mn_^"
+	}
 }
