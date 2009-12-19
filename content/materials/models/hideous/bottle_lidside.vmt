@@ -1,0 +1,17 @@
+"VertexlitGeneric"
+{
+		"$basetexture" 		"models/hideous/bottle_lidside"
+	    "$surfaceprop"		"Metal"
+		"$bumpmap"			"models/hideous/bottle_lidside_normal"
+		"$lightwarptexture"	"models/hideous/pillwarp"
+	  
+		"$phong"			"1"
+		"$phongexponent"	"5"
+		"$phongboost"		"1"
+		"$phongfresnelranges" "[0 0.5 1]"
+	  
+	  	"$rimlight" 		"1"	
+		"$rimlightexponent" "4"	
+		"$rimlightboost" 	"1.5"
+}
+
